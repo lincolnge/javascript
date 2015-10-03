@@ -4,27 +4,27 @@
 
 ## Table of Contents
 
-  1. [Basic Rules](#basic-rules)
-  1. [Naming](#naming)
-  1. [Declaration](#declaration)
-  1. [Alignment](#alignment)
-  1. [Quotes](#quotes)
-  1. [Spacing](#spacing)
+  1. [基本规范](#basic-rules)
+  1. [命名](#naming)
+  1. [声明](#declaration)
+  1. [对齐](#alignment)
+  1. [引号](#quotes)
+  1. [空格](#spacing)
   1. [Props](#props)
-  1. [Parentheses](#parentheses)
-  1. [Tags](#tags)
-  1. [Methods](#methods)
-  1. [Ordering](#ordering)
+  1. [括号](#parentheses)
+  1. [标签](#tags)
+  1. [方法](#methods)
+  1. [排序](#ordering)
 
-## Basic Rules
+## 基本规范
 
-  - Only include one React component per file.
-  - Always use JSX syntax.
-  - Do not use `React.createElement` unless you're initializing the app from a file that is not JSX.
+  - 每个文件只包含一个 React 组件。
+  - 总是使用 JSX 语法。
+  - 请别使用 React.createElement ，除非你从一个不转换 JSX 的文件初始化。
 
 ## Class vs React.createClass
 
-  - Use class extends React.Component unless you have a very good reason to use mixins.
+  - 使用扩展类 React.Component，除非你有一个非常好的理由才使用 mixins。
 
   ```javascript
   // bad
@@ -44,9 +44,9 @@
 
 ## Naming
 
-  - **Extensions**: Use `.jsx` extension for React components.
-  - **Filename**: Use PascalCase for filenames. E.g., `ReservationCard.jsx`.
-  - **Reference Naming**: Use PascalCase for React components and camelCase for their instances:
+  - **后缀名**：React 组件的后缀名请使用 jsx。
+  - **文件名**：文件名请使用帕斯卡命名法。例如：ReservationCard.jsx。
+  - **参考命名规范**: React 组件请使用帕斯卡命名法，组件的实例则使用驼峰式大小写：
     ```javascript
     // bad
     const reservationCard = require('./ReservationCard');
@@ -61,7 +61,7 @@
     const reservationItem = <ReservationCard />;
     ```
 
-    **Component Naming**: Use the filename as the component name. For example, `ReservationCard.jsx` should have a reference name of `ReservationCard`. However, for root components of a directory, use `index.jsx` as the filename and use the directory name as the component name:
+    **组件命名规范**：文件名须和组件名一致。所以 ReservationCard.jsx 的名称必须为 ReservationCard。但对于目录的根组件请使用 index.jsx 作为文件名，并使用目录名作为组件的名称：
     ```javascript
     // bad
     const Footer = require('./Footer/Footer.jsx')
@@ -74,8 +74,8 @@
     ```
 
 
-## Declaration
-  - Do not use displayName for naming components. Instead, name the component by reference.
+## 声明
+  - 不要使用 displayName 来命名组件，请使用命名规范来命名组件。
 
     ```javascript
     // bad
@@ -89,8 +89,8 @@
     }
     ```
 
-## Alignment
-  - Follow these alignment styles for JSX syntax
+## 对齐
+  - JSX 语法请遵循以下的对齐风格
 
     ```javascript
     // bad
@@ -103,10 +103,10 @@
       anotherSuperLongParam="baz"
     />
 
-    // if props fit in one line then keep it on the same line
+    // 如果 props 适合放在同一行，就将它们放在同一行上
     <Foo bar="bar" />
 
-    // children get indented normally
+    // 通常子元素有缩进
     <Foo
       superLongParam="bar"
       anotherSuperLongParam="baz"
@@ -115,8 +115,8 @@
     </Foo>
     ```
 
-## Quotes
-  - Always use double quotes (`"`) for JSX attributes, but single quotes for all other JS.
+## 引号
+  - 总是在 JSX 的属性使用双引号（"），但是所有的 JS 请使用单引号。
     ```javascript
     // bad
     <Foo bar='bar' />
@@ -131,8 +131,8 @@
     <Foo style={{ left: '20px' }} />
     ```
 
-## Spacing
-  - Always include a single space in your self-closing tag.
+## 空格
+  - 总是在自身结尾标签前加上一个空格。
     ```javascript
     // bad
     <Foo/>
@@ -149,7 +149,7 @@
     ```
 
 ## Props
-  - Always use camelCase for prop names.
+  - 总是使用驼峰式大小写命名 prop。
     ```javascript
     // bad
     <Foo
@@ -164,8 +164,8 @@
     />
     ```
 
-## Parentheses
-  - Wrap JSX tags in parentheses when they span more than one line:
+## 括号
+  - 当 JSX 的标签有多行時请使用括号将它们包起来：
     ```javascript
     /// bad
     render() {
@@ -190,8 +190,8 @@
     }
     ```
 
-## Tags
-  - Always self-close tags that have no children.
+## 标签
+  - 沒有子标签時总是使用自身结尾标签。
     ```javascript
     // bad
     <Foo className="stuff"></Foo>
@@ -200,7 +200,7 @@
     <Foo className="stuff" />
     ```
 
-  - If your component has multi-line properties, close its tag on a new line.
+  - 如果你的组件有多行属性，结尾标签请另起一行。
     ```javascript
     // bad
     <Foo
@@ -214,8 +214,8 @@
     />
     ```
 
-## Methods
-  - Do not use underscore prefix for internal methods of a React component.
+## 方法
+  - React 组件的內部方法不要使用下划线作前缀。
     ```javascript
     // bad
     React.createClass({
@@ -236,10 +236,10 @@
     });
     ```
 
-## Ordering
+## 排序
 
-  - Ordering for class extends React.Component:
-  
+  - 扩展类 React.Component 的排序：
+
   1. constructor
   1. optional static methods
   1. getChildContext
@@ -255,7 +255,7 @@
   1. *Optional render methods* like renderNavigation() or renderProfilePicture()
   1. render
 
-  - How to define propTypes, defaultProps, contextTypes, etc...  
+  - 如何定义 propTypes, defaultProps, contextTypes, 等...
 
   ```javascript
   import React, { Component, PropTypes } from 'react';
@@ -284,7 +284,7 @@
   Link.defaultProps = defaultProps;
   ```
 
-  - Ordering for React.createClass:
+  - React.createClass 的排序：
 
   1. displayName
   1. propTypes
