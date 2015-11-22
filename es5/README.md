@@ -2,7 +2,7 @@
 
 *用更合理的方式写 JavaScript*
 
-摘自：<https://github.com/sivan/javascript-style-guide/tree/master/es5> 有删节
+摘自：<https://github.com/sivan/javascript-style-guide/tree/master/es5> 有删改
 
 ## <a name="table-of-contents">目录</a>
 

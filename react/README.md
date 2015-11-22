@@ -2,6 +2,9 @@
 
 *A mostly reasonable approach to React and JSX*
 
+将繁体字的改为简体字：  
+<https://github.com/jigsawye/javascript/blob/master/react/README.md>
+
 ## Table of Contents
 
   1. [基本规范](#basic-rules)
